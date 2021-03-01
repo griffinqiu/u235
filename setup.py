@@ -13,7 +13,7 @@ setup(
     platforms="any",
 
     install_requires=[
-        "hanlp@git+ssh://git@github.com:yick2232/HanLP.git",
+        "hanlp@git+https://github.com/yick2232/HanLP.git",
         "tensorflow==2.4.0",
         "bert-for-tf2==0.14.6",
         "jieba",

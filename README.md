@@ -2,7 +2,7 @@
 ### Long Bridge Natural Language Processing (LB-NLP)
 ####  Install
 ```bash
-$ pip install lbnlp@git+ssh://git@github.com/griffinqiu/u235.git
+$ pip install lbnlp@git+https://github.com/yick2232/u235.git
 ```
 #### Set Environment Variables (Canary)
 ```bash
