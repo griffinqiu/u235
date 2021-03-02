@@ -13,7 +13,7 @@ $ export oss_endpoint=xxxx
 ```
 #### Create local directory for save model
 ```bash
-$ sudo make /opt/lb-models/
+$ sudo mkdir /opt/lb-models/
 $ sudo chmod 777 /opt/lb-models/
 ```
 
