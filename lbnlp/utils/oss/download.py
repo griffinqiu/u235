@@ -5,7 +5,7 @@ import oss2
 
 def download_model_from_oss(oss_conf, model_key, save_dir):
     # check for skip oss download
-    save_path = os.path.join("/tmp", model_key)
+    save_path = os.path.join("/tmp", os.path.basename(model_key))
     if os.path.exists(save_path):
         return
 
