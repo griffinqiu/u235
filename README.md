@@ -10,6 +10,7 @@ $ export oss_access_key_id=xxxx
 $ export oss_access_key_secret=xxxx
 $ export oss_bucket=xxxx
 $ export oss_endpoint=xxxx
+$ export AIRFLOW_HOME=xxxx
 ```
 #### Create local directory for save model
 ```bash
