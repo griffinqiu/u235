@@ -10,7 +10,7 @@ def download_model_from_oss(oss_conf, model_key, save_dir):
         return
 
     auth = oss2.Auth(oss_conf.access_key_id, oss_conf.access_key_secret)
-    bucket = oss2.Bucket(auth, oss_conf.endpoint, oss_conf.bucket)
+    bucket = oss2.Bucket(auth, oss_conf.endpoint, oss_conf.bucket.strip("oss://"))
 
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
