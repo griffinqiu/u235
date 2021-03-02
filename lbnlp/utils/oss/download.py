@@ -5,12 +5,12 @@ import oss2
 
 def download_model_from_oss(oss_conf, model_key, save_dir):
     # check for skip oss download
-    save_path = os.path.join("/opt", model_key)
+    save_path = os.path.join("/tmp", os.path.basename(model_key))
     if os.path.exists(save_path):
         return
 
     auth = oss2.Auth(oss_conf.access_key_id, oss_conf.access_key_secret)
-    bucket = oss2.Bucket(auth, oss_conf.endpoint, oss_conf.bucket)
+    bucket = oss2.Bucket(auth, oss_conf.endpoint, oss_conf.bucket.strip("oss://"))
 
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)

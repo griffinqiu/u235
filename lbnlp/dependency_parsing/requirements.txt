@@ -1,2 +1,2 @@
-hanlp@git+ssh://git@git.5th.im:2222/long-bridge-core-system/HanLP.git
+hanlp@git+https://github.com/yick2232/HanLP.git
 tensorflow==2.4.0

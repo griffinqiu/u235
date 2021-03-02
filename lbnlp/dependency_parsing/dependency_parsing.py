@@ -11,8 +11,10 @@ from lbnlp.utils.oss import download_model_from_oss
 
 
 # model path
+AIRFLOW_HOME = os.getenv("AIRFLOW_HOME")
+
 MTL_MODEL_KEY = "algo-models/dependency_parsing/mtl/close_tok_pos_ner_srl_dep_sdp_con_electra_small_20210111_124159.tar.gz"
-SAVE_DIR = "/opt/algo-models/dependency_parsing/mtl"
+SAVE_DIR = os.path.join(AIRFLOW_HOME, "var/models/dependency_parsing/mtl")
 
 
 class DependencyParsing:
