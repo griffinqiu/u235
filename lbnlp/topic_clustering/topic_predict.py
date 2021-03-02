@@ -13,11 +13,13 @@ from lbnlp.utils.oss import download_model_from_oss
 
 
 # model path
+AIRFLOW_HOME = os.getenv("AIRFLOW_HOME")
+
 DICT_PATH = "algo-models/topic_clustering/lsi_below-5_above-0.15_topic-20/dict.json"
 TFIDF_MODEL_PATH = "algo-models/topic_clustering/lsi_below-5_above-0.15_topic-20/tfidf.model"
 LSI_MODEL_PATH = "algo-models/topic_clustering/lsi_below-5_above-0.15_topic-20/lsi.model"
 MODEL_KEY = "algo-models/topic_clustering/lsi_below-5_above-0.15_topic-20.tar.gz"
-SAVE_DIR = "/opt/algo-models/topic_clustering/"
+SAVE_DIR = os.path.join(AIRFLOW_HOME, "var/models/topic_clustering/")
 
 
 def softmax(x):
@@ -34,9 +36,9 @@ class TopicCluster:
 
     def load_model(self, oss_conf: namedtuple):
         download_model_from_oss(oss_conf, MODEL_KEY, SAVE_DIR)
-        self.dictionary = corpora.Dictionary.load(os.path.join("/opt", DICT_PATH))
-        self.tfidf_model = models.TfidfModel.load(os.path.join("/opt", TFIDF_MODEL_PATH))
-        self.lsi_model = models.LsiModel.load(os.path.join("/opt", LSI_MODEL_PATH))
+        self.dictionary = corpora.Dictionary.load(os.path.join(SAVE_DIR, "lsi_below-5_above-0.15_topic-20/dict.json"))
+        self.tfidf_model = models.TfidfModel.load(os.path.join(SAVE_DIR, "lsi_below-5_above-0.15_topic-20/tfidf.model"))
+        self.lsi_model = models.LsiModel.load(os.path.join(SAVE_DIR, "lsi_below-5_above-0.15_topic-20/lsi.model"))
 
     def predict(self, docs: list):
         corpus = [jieba.cut_for_search(doc) for doc in docs]
