@@ -15,7 +15,7 @@ setup(
     install_requires=[
         "hanlp@git+https://github.com/yick2232/HanLP.git",
         "tensorflow==2.4.0",
-        "bert-for-tf2==0.14.6",
+        "bert-for-tf2==0.14.7",
         "jieba",
         "gensim",
         "oss2",
