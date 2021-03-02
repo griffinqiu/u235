@@ -11,6 +11,12 @@ $ export oss_access_key_secret=xxxx
 $ export oss_bucket=xxxx
 $ export oss_endpoint=xxxx
 ```
+#### Create local directory for save model
+```bash
+$ sudo make /opt/lb-models/
+$ sudo chmod 777 /opt/lb-models/
+```
+
 #### Dependency Parsing Demo
 ```python
 import os
